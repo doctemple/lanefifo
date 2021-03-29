@@ -1,0 +1,46 @@
+@charset "UTF-8";
+html {
+    font-size: 62.5%; /* เพื่อให้ 1rem มีค่าประมาณ 10px */
+}
+
+@font-face {
+    font-family: "digital";
+    src: url("./font/Technology-Bold.ttf");
+    font-weight: bolder;
+    font-style: bold;
+  }
+
+  :root {
+    --primary: #03224b;
+    --success: #00dd55;
+    --warning: #dd5500;
+    --danger:#dd0000;
+    --pink:#dd00dd;
+    --purple:#2a0541;
+    --darkgreen:#0a4105;
+    --dark: #333333;
+    --superdark: #222222;
+    --secondary:#555555;
+    --light: #ffffff;
+    --gray: #dddddd;
+    --black:#000000;
+  }
+
+body { 
+    padding:0; 
+    margin:0;
+    text-align: center; 
+    font-size: 1.4em; /* มีค่าประมาณ 14px */
+    background-color: var(--black);
+    overflow: hidden;
+}
+
+#warpper{ 
+    overflow: hidden; 
+    width:100vw;
+    height: 100vh;
+    background-color: var(--black);
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+}

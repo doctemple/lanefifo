@@ -1,0 +1,168 @@
+@font-face {
+  font-family: "digital";
+  src: url("../../css/font/Technology-Bold.ttf");
+  font-weight: bolder;
+  font-style: bold;
+}
+
+:root {
+  --row1-height:20vh;
+  --row2-height:60vh;
+}
+
+#warpper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: var(10vh) var(70vh) var(10vh) var(10vh);
+  grid-template-areas:
+    "group group group status status"
+    "clock clock clock status status"
+    "sub_ch sub_ch sub_lane status status"
+    "channel channel lene status status";
+  grid-gap: 0.4em;
+}
+
+#sub_ch {
+  background-color: var(--darkgreen);
+  color:var(--light);
+  grid-area: sub_ch;
+  overflow: hidden;
+}
+
+#sub_lane {
+  background-color: var(--purple);
+  color:var(--light);
+  grid-area: sub_lane;
+  overflow: hidden;
+}
+
+#channel {
+  background-color: var(--darkgreen);
+  color:var(--light);
+  grid-area: channel;
+  overflow: hidden;
+}
+
+#group {
+  background-color: var(--primary);
+  color:var(--light);
+  grid-area: group;
+  overflow: hidden;
+}
+
+#lene {
+  background-color: var(--purple);
+  color:var(--light);
+  grid-area: lene;
+  overflow: hidden;
+}
+
+#status {
+  background-color: var(--superdark);
+  color:var(--light);
+  grid-area: status;
+  overflow: hidden;
+}
+
+#clock {
+  background-color: var(--black);
+  color:var(--light);
+  grid-area: clock;
+  overflow: hidden;
+}
+#group h1 {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size:8vw; 
+  margin: auto auto;
+  line-height: 19vh;
+}
+
+#sub_ch h1 {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size:4vw; 
+  margin: auto auto;
+  line-height: 9vh;
+}
+
+#sub_lane h1 {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size:4vw; 
+  margin: auto auto;
+  line-height: 9vh;
+}
+
+#lene h1 {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size:8vw; 
+  margin: auto auto;
+  line-height: 19vh;
+}
+
+#channel h1 {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size:8vw; 
+  margin: auto auto;
+  line-height: 19vh;
+}
+
+  #clock span { 
+  font-family: digital;
+  color:var(--warning);
+  font-size:30vw; 
+  margin: auto auto;
+  line-height: 50vh;
+}
+
+#circle1{
+margin-top:6vh;
+}
+#circle2{
+  margin-top:6vh;
+}
+
+.circle {
+  height: 0;
+  width: 60%;
+  padding:30% 0;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  }
+.circle i {
+  font-size: 14vw;
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  line-height: 24vw;
+  z-index: 2;
+}
+
+.circle_gray {
+  background-color: rgb(65, 65, 65);
+  color: var(--secondary);
+}
+
+.circle_yellow  {
+  background-color: gold;
+  color: var(--dark);
+}
+
+.circle_green {
+    background-color: rgb(41, 197, 27);
+    color: var(--dark);
+  }
+
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+
+  }
+  
+  .flex-container > div {
+    text-align: center;
+  }
+

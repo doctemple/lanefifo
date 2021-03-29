@@ -1,0 +1,264 @@
+@charset "UTF-8";
+html {
+    font-size: 62.5%; /* เพื่อให้ 1rem มีค่าประมาณ 10px */
+}
+
+@font-face {
+    font-family: "digital";
+    src: url("../../css/font/Technology-Bold.ttf");
+    font-weight: bolder;
+  }
+
+  :root {
+    --primary: #0a2753;
+    --success: #00dd55;
+    --warning: #dd5500;
+    --danger:#bb0000;
+    --pink:#dd00dd;
+    --purple:#520968;
+    --info:#003391;
+    --dark: #333333;
+    --superdark: #222222;
+    --secondary:#555555;
+    --light: #ffffff;
+    --gray: #dddddd;
+    --black:#000000;
+  }
+
+  body {
+    text-transform: uppercase;
+  }
+
+.text-green span { color:#00dd55; }
+.bg-dark {
+  background-color:var(--dark);
+}
+.bg-primary{
+  background-color: var(--primary);
+}
+.bg-purple {
+  background-color:var(--purple);
+}
+.bg-info {
+  background-color:var(--info);
+}
+.danger{ 
+  color:var(--light);
+  background-color: var(--danger);
+ }
+.success{ color:var(--success); }
+.secondary{ background-color:#C3C3C3; }
+.dark{ color:var(--dark); }
+body { 
+    padding:0; 
+    margin:0;
+    text-align: center; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: var(--black);
+    overflow: hidden;
+}
+
+.g {
+  font-size: 1vw;
+}
+
+.table{
+  width:100%;
+  height: 90vh;
+  background-color: var(--black);
+  }
+
+.subtable{
+width:100%;
+background-color: var(--black);
+}
+table td {
+  font-size: 1.4vw;
+}
+table thead {
+  background-color: var(--primary);
+  color:var(--light);
+}
+
+table th { padding:0.6vw; }
+table tbody {
+  background-color: #01B0F1;
+}
+
+#lane-table tbody tr td {
+  border-bottom: 3px #003391 solid;
+}
+
+#lane-table tbody tr td.clock {
+  border-left: 3px #003391 solid;
+}
+
+table tfoot {
+  background-color: var(--info);
+  color:var(--light);
+}
+
+.head-top {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size:0.8vw; 
+  margin: auto auto;
+  line-height: 1vh;
+}
+.head {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size:1.6vw; 
+  margin: auto auto;
+  line-height: 1.6vh;
+}
+
+.head2 {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size:1vw; 
+  margin: auto auto;
+  line-height: 1vw;
+}
+
+.foot {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size:1vw; 
+  margin: auto auto;
+  line-height: 2vw;
+}
+
+.clock span { 
+  color: #fcff4f;
+  font-weight: bold;
+  font-family: digital;
+  font-size: 3vw;
+  margin-left: 0.8vw;
+  position: absolute;
+  line-height: 8vw;
+  z-index: 3;
+  }
+
+.clock { 
+padding: 0;
+overflow: hidden;
+width:50px;
+vertical-align: top;
+text-align: left;
+
+}
+
+td img {
+  width: 90%;
+  margin: auto;
+  visibility: hidden;
+}
+
+.empty img {
+  visibility: hidden;
+background-color:#01B0F1 !important;
+}
+
+.show img {
+  visibility: visible;
+  background-color:#01B0F1 !important;
+  }
+
+.empty {
+  background-color:#01B0F1;
+  box-shadow: inset;
+  }
+
+#circle1{
+margin-top:3vh;
+}
+#circle2{
+  margin-top:3vh;
+}
+
+.circle {
+  height: 0;
+  width: 60%;
+  padding:30% 0;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  }
+
+thead.circle i {
+  font-size: 1vw;
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  line-height: 1vw;
+  z-index: 2;
+}
+
+tfoot.circle i {
+  font-size: 0.6vw;
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  line-height: 1vw;
+  z-index: 2;
+}
+
+.circle_gray {
+  background-color:#ffffff;
+  color: var(--secondary);
+  border:3px solid #000000;
+}
+
+.circle_yellow  {
+  background-color: gold;
+  color: var(--dark);
+  border:3px solid #000000;
+}
+
+.circle_green {
+    background-color:#11FD54;
+    color: var(--dark);
+    border:3px solid #000000;
+  }
+
+  .circle_danger {
+    background-color: rgb(221, 11, 11);
+    color: var(--light);
+    border:3px solid #000000;
+  }
+
+.plan{
+  vertical-align: top;
+}
+
+.pa {
+  width:3.2vw !important;
+}
+
+.lane::after {
+  content: "";
+  position: absolute;
+  height: 0.2vh;
+  width: 6vw;
+  margin-left:-6.5vw;
+  border-top:0.3vw  #069fd6 dashed;
+  z-index: 2;
+}
+
+.lane::before {
+  content: "";
+  position: absolute;
+  margin-top:3.3vw;
+  height: 0.2vh;
+  width: 6vw;
+  border-top:0.3vw  #069fd6 dashed;
+  z-index: 2;
+}
+
+.lane1 { background-color:#051636; }
+.lane2 { background-color:#463c03; }
+.lane3 { background-color:#200229; }
+.lane4 { background-color:#033b06; }
