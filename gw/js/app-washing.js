@@ -106,10 +106,13 @@ $scope.was = [];
               $scope.was['otNgRepair'] = actual[1].categories[1].ng;
               $scope.was['otTotalRepair'] = actual[1].categories[1].total;
 
+              
+          var netTotal = res.data['totalResult'];
+
           /* TOTAL */
-          $scope.was['okTotal'] = actual[2].total[0].ok;
-          $scope.was['ngTotal'] = actual[2].total[0].ng;
-          $scope.was['total'] = actual[2].total[0].total;
+          $scope.was['okTotal'] = netTotal.ok;
+          $scope.was['ngTotal'] = netTotal.ng;
+          $scope.was['total'] = netTotal.total;
           
 
         });
