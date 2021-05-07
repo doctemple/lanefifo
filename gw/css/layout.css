@@ -1,0 +1,284 @@
+@charset "UTF-8";
+html {
+    font-size: 62.5%; /* เพื่อให้ 1rem มีค่าประมาณ 10px */
+}
+
+@font-face {
+    font-family: "digital";
+    src: url("../../css/font/digital-7\ \(mono\).ttf");
+    font-weight: bolder;
+  }
+
+  :root {
+    --primary: #0a2753;
+    --success: #00dd55;
+    --warning: #dd5500;
+    --danger:#bb0000;
+    --pink:#dd00dd;
+    --purple:#520968;
+    --info:#003391;
+    --dark: #333333;
+    --superdark: #222222;
+    --secondary:#555555;
+    --light: #ffffff;
+    --gray: #dddddd;
+    --black:#000000;
+  }
+
+  body {
+    text-transform: uppercase;
+    background-color: #000000;
+  }
+
+.text-green span { color:#00dd55; }
+.bg-dark {
+  background-color:var(--dark);
+}
+.bg-primary{
+  background-color: var(--primary);
+}
+.bg-purple {
+  background-color:var(--purple);
+}
+.bg-info {
+  background-color:var(--info);
+}
+.danger{ 
+  color:var(--light);
+  background-color: var(--danger);
+ }
+.success{ color:var(--success); }
+.secondary{ background-color:#C3C3C3; }
+.dark{ color:var(--dark); }
+body { 
+    padding:0; 
+    margin:0;
+    text-align: center; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    overflow: hidden;
+}
+
+.g {
+  font-size: 1.8vw;
+}
+
+.table{
+  width:100%;
+  }
+
+.subtable{
+  width:100%;
+  height: 100vh;
+}
+
+
+table th { padding:0.6vw; }
+
+table tfoot {
+  background-color: var(--info);
+  color:var(--light);
+}
+
+.head-top {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size:0.8vw; 
+  margin: auto auto;
+  line-height: 1vh;
+}
+
+.head {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size:2vw; 
+  margin: auto auto;
+  line-height: 1.6vw;
+}
+
+.head2 {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size:1.6vw; 
+  margin: auto auto;
+  line-height:2.5vw;
+}
+
+.foot {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size:1vw; 
+  margin: auto auto;
+  line-height: 1.2vw;
+}
+
+.clock { 
+  color: #fcff4f;
+  font-weight: bold;
+  font-family: digital;
+  font-size: 4vw;
+  text-align: center;
+  background-color: #1b1b1b;
+  }
+
+
+#circle1{
+margin-top:3vh;
+}
+#circle2{
+  margin-top:3vh;
+}
+
+.icircle {
+  height: 0;
+  width: 0;
+  padding: 2.6vw;
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  }
+
+  .icircle i {
+    font-size: 2.6vw;
+    font-weight: bold;
+    position: absolute;
+    z-index: 2;
+    top:0.8vw;
+    left:1.7vw;
+  }
+.circle {
+  height: 0;
+  width: 60%;
+  padding:30% 0;
+  border-radius: 50%;
+  display: inline-block;
+  margin:0.3vw;
+  position: relative;
+  }
+
+
+.circle_blue {
+  background-color:#0065d8;
+  color: var(--secondary);
+  border:3px solid #000000;
+}
+
+.circle_gray {
+  background-color:#494949;
+  color: var(--secondary);
+  border:3px solid #000000;
+}
+
+.circle_light {
+  background-color:#ffffff;
+  color: var(--secondary);
+  border:3px solid #000000;
+}
+
+.circle_yellow  {
+  background-color: gold;
+  color: var(--dark);
+  border:3px solid #000000;
+}
+
+.circle_green {
+    background-color:#11FD54;
+    color: var(--dark);
+    border:3px solid #000000;
+  }
+
+  .circle_danger {
+    background-color: rgb(221, 11, 11);
+    color: var(--light);
+    border:3px solid #000000;
+  }
+
+
+.plan{
+  vertical-align: top;
+}
+
+.pa {
+  width:5vw !important;
+}
+
+.lane::after {
+  content: "";
+  position: absolute;
+  height: 0.2vh;
+  width: 6vw;
+  margin-left:-6.5vw;
+  border-top:0.3vw  #069fd6 dashed;
+  z-index: 2;
+}
+
+.lane::before {
+  content: "";
+  position: absolute;
+  margin-top:3.3vw;
+  height: 0.2vh;
+  width: 6vw;
+  border-top:0.3vw  #069fd6 dashed;
+  z-index: 2;
+}
+
+.active {
+  background-color: #ffffff;
+}
+
+.empty {
+  background-image: none;
+}
+
+.show {
+  background-image: url(../../images/car_sr.png);
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.gap-l{
+  width:5vw;
+}
+
+.car-l{
+  width:10vw;
+}
+
+.lane-table tr td {
+  border:2px solid #000000;
+}
+
+.lane-table{  height: 90vh; }
+.lane_car { height:13vh; }
+
+.empty-lane{
+  background-color: #333333;
+  font-size: 2vw;
+  color: #ffffff;
+}
+
+.flashit{
+  background-color: #ff0000;
+	-webkit-animation: flash linear 1s infinite;
+	animation: flash linear 1s infinite;
+}
+
+.disable{ background-color: #333333; color:#494949; }
+.activetitle { background-color:#0071C1; color: #ffffff; font-weight: bold;  }
+.disabletitle {  background-color: #636363; color:#888888;  }
+.orange {
+  background-color: #ff9100;
+}
+
+.yellow{
+  background-color: #ffff00;
+}
+
+@-webkit-keyframes flash {
+	1% { background-color:#ff0000; color:#ffffff;  } 
+  50% { background-color:#ff0000; color:#ffffff;  } 
+	100% { background-color:#0071C1; color:#000000;  }
+}
+
+@keyframes flash {
+	1% { background-color:#ff0000; color:#ffffff;  } 
+  50% { background-color:#ff0000; color:#ffffff;  } 
+	100% { background-color:#0071C1; color:#000000;  }
+}

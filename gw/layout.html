@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Monitor</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://www.google.com">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" >
+    <meta http-equiv="Pragma" content="no-cache" >
+    <meta http-equiv="Expires" content="0" >
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="./css/layout.css">
+    <script src="../js/main.js"></script>
+    <script src="../js/angular.min.js"></script>
+    <script src="./js/main.js"></script>
+	</head>
+ <body ng-app="myApp" ng-controller="myCtrl">
+
+  <table class="subtable">
+    <thead>
+<tr><td style="height:1.5vh; background-color:#9b9b9b; color: #202020;  text-align: left;">
+  <h2 style="margin-left:2vw; font-size: 1.6vw;">PARKING LAOUT</h2>
+  </td></tr>
+  <tr ><td  style="height: 1vh;">&nbsp;</td></tr>
+<tr>
+  <td >
+  
+    <table class="table lane-table" id="lane-table"> 
+      <tr style="height: 5vw; font-size: 2.5vw;">
+        <td class="gap-l"></td>
+        <td ng-class="{'disabletitle':sensor[1].active==0, 'activetitle':sensor[1].active==1}" class="car-l" colspan="3">DOM ASSIGN</td>
+        <td class="gap-l"></td>
+        <td ng-class="{'disabletitle':sensor[3].active==0, 'activetitle':sensor[3].active==1}" class="car-l"  colspan="3">STOCK</td>
+        <td class="gap-l"></td>
+        <td ng-class="{'disabletitle':sensor[5].active==0, 'activetitle':sensor[4].active==1}" class="car-l" colspan="3">EXPORT</td>
+        <td class="gap-l"></td>
+      </tr>
+      <tr class="lane_car">
+        <td class="gap-l"></td>
+        <td  ng-class="{'disable':sensor[1].active==0, 'empty':sensor[1].channels[3]==0, 'show':sensor[1].channels[3]==1,'flashit':sensor[1].light1==1,'orange':sensor[1].light2==1, 'yellow':sensor[1].light3==1}" class="active">&nbsp;</td>
+        <td ></td>
+        <td  ng-class="{'disable':sensor[2].active==0, 'empty':sensor[2].channels[3]==0, 'show':sensor[2].channels[3]==1,'flashit':sensor[2].light1==1,'orange':sensor[2].light2==1, 'yellow':sensor[2].light3==1}" class="active">&nbsp;</td>
+        <td ></td>
+        <td  ng-class="{'disable':sensor[3].active==0, 'empty':sensor[3].channels[3]==0, 'show':sensor[3].channels[3]==1,'flashit':sensor[3].light1==1,'orange':sensor[3].light2==1, 'yellow':sensor[3].light3==1}" class="active" >&nbsp;</td>
+        <td ></td>
+        <td  ng-class="{'disable':sensor[4].active==0, 'empty':sensor[4].channels[3]==0, 'show':sensor[4].channels[3]==1,'flashit':sensor[4].light1==1,'orange':sensor[4].light2==1, 'yellow':sensor[4].light3==1}" class="active" >&nbsp;</td>
+        <td ></td>  
+        <td  ng-class="{'disable':sensor[5].active==0, 'empty':sensor[5].channels[3]==0, 'show':sensor[5].channels[3]==1,'flashit':sensor[5].light1==1,'orange':sensor[5].light2==1, 'yellow':sensor[5].light3==1}" class="active" >&nbsp;</td>
+        <td ></td>  
+        <td  ng-class="{'disable':sensor[6].active==0, 'empty':sensor[6].channels[3]==0, 'show':sensor[6].channels[3]==1,'flashit':sensor[6].light1==1,'orange':sensor[6].light2==1, 'yellow':sensor[6].light3==1}" class="active" >&nbsp;</td>
+        <td class="gap-l"></td>
+      </tr>
+      <tr class="lane_car">
+        <td class="gap-l"></td>
+        <td   ng-class="{'disable':sensor[1].active==0, 'empty':sensor[1].channels[2]==0, 'show':sensor[1].channels[2]==1,'flashit':sensor[1].light1==1,'orange':sensor[1].light2==1, 'yellow':sensor[1].light3==1}" class="active">&nbsp;</td>
+        <td ></td>
+        <td  ng-class="{'disable':sensor[2].active==0, 'empty':sensor[2].channels[2]==0, 'show':sensor[2].channels[2]==1,'flashit':sensor[2].light1==1,'orange':sensor[2].light2==1, 'yellow':sensor[2].light3==1}" class="active">&nbsp;</td>
+        <td ></td>
+        <td   ng-class="{'disable':sensor[3].active==0, 'empty':sensor[3].channels[2]==0, 'show':sensor[3].channels[2]==1,'flashit':sensor[3].light1==1,'orange':sensor[3].light2==1, 'yellow':sensor[3].light3==1}" class="active" >&nbsp;</td>
+        <td ></td>
+        <td   ng-class="{'disable':sensor[4].active==0, 'empty':sensor[4].channels[2]==0, 'show':sensor[4].channels[2]==1,'flashit':sensor[4].light1==1,'orange':sensor[4].light2==1, 'yellow':sensor[4].light3==1}" class="active" >&nbsp;</td>
+        <td ></td>
+        <td   ng-class="{'disable':sensor[5].active==0, 'empty':sensor[5].channels[2]==0, 'show':sensor[5].channels[2]==1,'flashit':sensor[5].light1==1,'orange':sensor[5].light2==1, 'yellow':sensor[5].light3==1}" class="active" >&nbsp;</td>
+        <td ></td>  
+        <td  ng-class="{'disable':sensor[6].active==0, 'empty':sensor[6].channels[2]==0, 'show':sensor[6].channels[2]==1,'flashit':sensor[6].light1==1,'orange':sensor[6].light2==1, 'yellow':sensor[6].light3==1}" class="active" >&nbsp;</td>
+        <td class="gap-l"></td>
+      </tr>
+      <tr class="lane_car">
+        <td class="gap-l"></td>
+        <td   ng-class="{'disable':sensor[1].active==0, 'empty':sensor[1].channels[1]==0, 'show':sensor[1].channels[1]==1,'flashit':sensor[1].light1==1,'orange':sensor[1].light2==1, 'yellow':sensor[1].light3==1}" class="active">&nbsp;</td>
+        <td ></td>
+        <td  ng-class="{'disable':sensor[2].active==0, 'empty':sensor[2].channels[1]==0, 'show':sensor[2].channels[1]==1,'flashit':sensor[2].light1==1,'orange':sensor[2].light2==1, 'yellow':sensor[2].light3==1}" class="active">&nbsp;</td>
+        <td ></td>
+        <td   ng-class="{'disable':sensor[3].active==0, 'empty':sensor[3].channels[1]==0, 'show':sensor[3].channels[1]==1,'flashit':sensor[3].light1==1,'orange':sensor[3].light2==1, 'yellow':sensor[3].light3==1}" class="active" >&nbsp;</td>
+        <td ></td>
+        <td   ng-class="{'disable':sensor[4].active==0, 'empty':sensor[4].channels[1]==0, 'show':sensor[4].channels[1]==1,'flashit':sensor[4].light1==1,'orange':sensor[4].light2==1, 'yellow':sensor[4].light3==1}" class="active" >&nbsp;</td>
+        <td ></td>
+        <td   ng-class="{'disable':sensor[5].active==0, 'empty':sensor[5].channels[1]==0, 'show':sensor[5].channels[1]==1,'flashit':sensor[5].light1==1,'orange':sensor[5].light2==1, 'yellow':sensor[5].light3==1}" class="active" >&nbsp;</td>
+        <td ></td>  
+        <td  ng-class="{'disable':sensor[6].active==0, 'empty':sensor[6].channels[1]==0, 'show':sensor[6].channels[1]==1,'flashit':sensor[6].light1==1,'orange':sensor[6].light2==1, 'yellow':sensor[6].light3==1}" class="active" >&nbsp;</td>
+        <td class="gap-l"></td>
+      </tr>
+      <tr class="lane_car">
+        <td class="gap-l"></td>
+        <td   ng-class="{'disable':sensor[1].active==0, 'empty':sensor[1].channels[0]==0, 'show':sensor[1].channels[0]==1,'flashit':sensor[1].light1==1,'orange':sensor[1].light2==1, 'yellow':sensor[1].light3==1}" class="active">&nbsp;</td>
+        <td ></td>
+        <td  ng-class="{'disable':sensor[2].active==0, 'empty':sensor[2].channels[0]==0, 'show':sensor[2].channels[0]==1,'flashit':sensor[2].light1==1,'orange':sensor[2].light2==1, 'yellow':sensor[2].light3==1}" class="active">&nbsp;</td>
+        <td ></td>
+        <td   ng-class="{'disable':sensor[3].active==0, 'empty':sensor[3].channels[0]==0, 'show':sensor[3].channels[0]==1,'flashit':sensor[3].light1==1,'orange':sensor[3].light2==1, 'yellow':sensor[3].light3==1}" class="active" >&nbsp;</td>
+        <td ></td>
+        <td   ng-class="{'disable':sensor[4].active==0, 'empty':sensor[4].channels[0]==0, 'show':sensor[4].channels[0]==1,'flashit':sensor[4].light1==1,'orange':sensor[4].light2==1, 'yellow':sensor[4].light3==1}" class="active" >&nbsp;</td>
+        <td ></td>
+        <td   ng-class="{'disable':sensor[5].active==0, 'empty':sensor[5].channels[0]==0, 'show':sensor[5].channels[0]==1,'flashit':sensor[5].light1==1,'orange':sensor[5].light2==1, 'yellow':sensor[5].light3==1}" class="active" >&nbsp;</td>
+        <td ></td>  
+        <td  ng-class="{'disable':sensor[6].active==0, 'empty':sensor[6].channels[0]==0, 'show':sensor[6].channels[0]==1,'flashit':sensor[6].light1==1,'orange':sensor[6].light2==1, 'yellow':sensor[6].light3==1}" class="active" >&nbsp;</td>
+        <td class="gap-l"></td>
+      </tr>
+      <tr class="lane_car">
+        <td></td>
+        <td ><div ng-class="{'disable':sensor[1].active==0, 'circle_light':sensor[1].light1==0,'circle_blue':sensor[1].light1==1,'flashit':sensor[1].light1==1,'orange':sensor[1].light2==1, 'yellow':sensor[1].light3==1}" class="icircle "><i>{{sensor[1].lane}}</i></div></td>
+        <td></td>
+        <td ><div ng-class="{'disable':sensor[2].active==0, 'circle_light':sensor[2].light1==0,'circle_blue':sensor[2].light1==1,'flashit':sensor[2].light1==1,'orange':sensor[2].light2==1, 'yellow':sensor[2].light3==1}" class="icircle "><i>{{sensor[2].lane}}</i></div></td>
+        <td></td>
+        <td ><div ng-class="{'disable':sensor[3].active==0, 'circle_light':sensor[3].light1==0,'circle_blue':sensor[3].light1==1,'flashit':sensor[3].light1==1,'orange':sensor[3].light2==1, 'yellow':sensor[3].light3==1}" class="icircle "><i>{{sensor[3].lane}}</i></div></td>
+        <td></td>
+        <td ><div ng-class="{'disable':sensor[4].active==0, 'circle_light':sensor[4].light1==0,'circle_blue':sensor[4].light1==1,'flashit':sensor[4].light1==1,'orange':sensor[4].light2==1, 'yellow':sensor[4].light3==1}" class="icircle"><i>{{sensor[4].lane}}</i></div></td>
+        <td></td>
+        <td ><div ng-class="{'disable':sensor[5].active==0, 'circle_light':sensor[5].light1==0,'circle_blue':sensor[5].light1==1,'flashit':sensor[5].light1==1,'orange':sensor[5].light2==1, 'yellow':sensor[5].light3==1}" class="icircle"><i>{{sensor[5].lane}}</i></div></td>
+        <td></td>
+        <td ><div ng-class="{'disable':sensor[6].active==0, 'circle_light':sensor[6].light1==0,'circle_blue':sensor[6].light1==1,'flashit':sensor[6].light1==1,'orange':sensor[6].light2==1, 'yellow':sensor[6].light3==1}" class="icircle"><i>{{sensor[6].lane}}</i></div></td>
+        <td class="gap-l"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td ng-class="{'disable':sensor[1].active==0}" class="clock ">00:00</td>
+        <td></td>
+        <td ng-class="{'disable':sensor[2].active==0}" class="clock ">00:00</td>
+        <td></td>
+        <td ng-class="{'disable':sensor[3].active==0}" class="clock ">00:00</td>
+        <td></td>
+        <td ng-class="{'disable':sensor[4].active==0}" class="clock ">00:00</td>
+        <td></td>
+        <td ng-class="{'disable':sensor[5].active==0}" class="clock ">00:00</td>
+        <td></td>
+        <td ng-class="{'disable':sensor[6].active==0}" class="clock ">00:00</td>
+        <td class="gap-l"></td>
+      </tr>
+      </table>
+
+  </td>
+  </tr>
+</tbody>
+</table>
+
+</body>
+</html> 

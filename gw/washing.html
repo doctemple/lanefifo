@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Monitor</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy"
+      content="default-src * 'self' 'unsafe-inline' data: gap: 'unsafe-eval';
+      style-src * 'self' 'unsafe-inline';
+      connect-src * ;
+      script-src * 'self' 'unsafe-inline';
+      media-src *">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" >
+    <meta http-equiv="Pragma" content="no-cache" >
+    <meta http-equiv="Expires" content="0" >
+
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+		<link rel="stylesheet" href="../css/animate.css">
+    <script src="../js/main.js"></script>
+    <script src="../js/angular.min.js"></script>
+    <script src="./js/app-washing.js"></script>
+<style>
+html {
+    font-size: 62.5%; /* เพื่อให้ 1rem มีค่าประมาณ 10px */
+}
+body {
+    text-transform: uppercase;
+    padding:0; 
+    margin:0;
+    text-align: center; 
+    font-family: Tahoma;
+    overflow: hidden;
+    font-weight: 700;
+}
+
+/* Detail Plan */
+.tg  {width:100%; height:100%; font-size: 1.2vw; }
+.tg .tg-abx8{background-color:#c0c0c0;}
+.tg .tg-uqo3{background-color:#efefef;}
+.tg .tg-edx2{background-color:#1a488d;color:#ffffff;}
+.tg .tg-i81m{background-color:#ffffff;}
+
+/* Detail Resuly */
+.tg2  {width: 100%; height: 100%; font-size: 1.2vw;}
+.tg2 .tg2-zlqz{background-color:#c0c0c0;}
+.tg2 .tg2-c3ow{ background-color: #c0c0c0; }
+.tg2 .tg2-lubg{background-color:#1a488d; color:#ffffff;}
+.tg2 .tg2-6e8n{background-color:#c0c0c0;}
+.tg2 .tg2-3xi5{background-color:#ffffff;}
+.tg2 .tg2-7g6k{background-color:#ffffff;}
+
+</style>
+	</head>
+ <body ng-app="myApp" ng-controller="myCtrl" style="background-color: #272727;">
+
+  <table style="width:100vw;">
+    <thead style="height: 8vh;">
+      <tr>
+        <td  style="background-color:#092250; color: white; font-size: 3vw;" >
+          {{system_name}}
+        </td>
+        <td  style="background-color:#1a488d; width:25vw; color:#ffffff;">
+          <h1>{{CurrentDate | date: 'dd/mm/yyyy H:m:s'}}</h1>
+          <h2>Takt Time (min) {{was.taktTime}}</h2>
+        </td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+<td colspan="2" style="background-color:#272727;  height:92vh;" >
+<table style="width:100vw; height:100%;">
+  <tr style="height:25vh;">
+      <td style="width:50%;">
+        <table style="width:100%; height:100%; background-color: #272727;">
+          <tr style="font-size: 3vw; ">
+            <td style="background-color:#bbbbbb; width:70%;">Today Plan</td>
+            <td style="background-color: #ffffff; color: #272727;">{{was.totalPlanToday}}</td>
+          </tr>
+          <tr style="font-size: 3vw;">
+            <td style="background-color:#bbbbbb;">Plan finish</td>
+            <td style="background-color: #ffffff; color: #272727;">{{was.finishPlan}}</td>
+          </tr>
+          </table>
+      </td>
+      <td >
+
+        <table class="tg">
+          <thead>
+            <tr>
+              <th class="tg-edx2" colspan="5" style="height:3vh;">Detail Plan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="tg-abx8"></td>
+              <td class="tg-abx8">Batch assigned</td>
+              <td class="tg-abx8">Repair</td>
+              <td class="tg-abx8">Deposit</td>
+              <td class="tg-abx8">Total</td>
+            </tr>
+            <tr>
+              <td class="tg-abx8">C/O</td>
+              <td class="tg-i81m">{{was.batchCO}}</td>
+              <td class="tg-i81m">{{was.repairCO}}</td>
+              <td class="tg-i81m">{{was.depositCO}}</td>
+              <td class="tg-i81m">{{was.totalCO}}</td>
+            </tr>
+            <tr>
+              <td class="tg-abx8">Today</td>
+              <td class="tg-i81m">{{was.batchToday}}</td>
+              <td class="tg-i81m">{{was.repairToday}}</td>
+              <td class="tg-i81m">{{was.depositToday}}</td>
+              <td class="tg-i81m">{{was.totalToday}}</td>
+            </tr>
+            <tr>
+              <td class="tg-abx8">Total</td>
+              <td class="tg-i81m">{{was.batchTotal}}</td>
+              <td class="tg-i81m">{{was.repairTotal}}</td>
+              <td class="tg-i81m">{{was.depositTotal}}</td>
+              <td class="tg-i81m">{{was.totalTotal}}</td>
+            </tr>
+            <tr>
+              <td class="tg-abx8">Plan Today</td>
+              <td class="tg-uqo3">{{was.batchPlanToday}}</td>
+              <td class="tg-uqo3">{{was.repairPlanToday}}</td>
+              <td class="tg-uqo3">{{was.depositPlanToday}}</td>
+              <td class="tg-uqo3">{{was.totalPlanToday}}</td>
+            </tr>
+            <tr>
+              <td class="tg-abx8">Remain</td>
+              <td class="tg-i81m">{{was.batchRemain}}</td>
+              <td class="tg-i81m">{{was.repairRemain}}</td>
+              <td class="tg-i81m">{{was.depositRemain}}</td>
+              <td class="tg-i81m">{{was.totalRemain}}</td>
+            </tr>
+          </tbody>
+          </table>
+
+      </td></tr>
+  <tr><td >
+  
+    <table style="width:100%; height:100%; background-color: #272727;">
+      <tr style="font-size: 1vw; height:3vh; ">
+        <td colspan="2" style="background-color:#1a488d; color:#ffffff;">Result</td>
+      </tr>
+      <tr style="font-size: 3vw; ">
+        <td style="background-color:#bbbbbb; width:70%;">Plan</td>
+        <td style="background-color: #ffffff; color: #272727;">{{was.plan}}</td>
+      </tr>
+      <tr style="font-size: 3vw;">
+        <td style="background-color:#bbbbbb;">Actual</td>
+        <td style="background-color: #ffffff; color: #272727;">{{was.total}}</td>
+      </tr>
+      <tr style="font-size: 3vw;">
+        <td style="background-color:#bbbbbb; width:70%;">Diff</td>
+        <td style="background-color: #00a351; color: #ffffff;">{{was.diff}}</td>
+      </tr>
+      </table>
+
+  </td>
+      <td >
+      
+        <table class="tg2" style="background-color: #272727;">
+          <thead>
+            <tr>
+              <th class="tg2-lubg" colspan="5">Detail Result</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="tg2-zlqz" rowspan="2" style="width:25%;">Source</td>
+              <td class="tg2-zlqz" rowspan="2" style="width:25%;">Category</td>
+              <td class="tg2-zlqz" colspan="3">Result</td>
+            </tr>
+            <tr>
+              <td class="tg2-c3ow" style="width:16.6%;">OK</td>
+              <td class="tg2-c3ow" style="width:16.6%;">NG</td>
+              <td class="tg2-c3ow" style="width:216.6%;">Total</td>
+            </tr>
+            <tr>
+              <td class="tg2-zlqz" rowspan="3">Own Yard</td>
+              <td class="tg2-6e8n">New Car</td>
+              <td class="tg2-3xi5">{{was.ownOkNewcar}}</td>
+              <td class="tg2-3xi5">{{was.ownNgNewcar}}</td>
+              <td class="tg2-3xi5">{{was.ownTotalNewcar}}</td>
+            </tr>
+            <tr>
+              <td class="tg2-6e8n">Repair</td>
+              <td class="tg2-3xi5">{{was.ownOkRepair}}</td>
+              <td class="tg2-3xi5">{{was.ownNgRepair}}</td>
+              <td class="tg2-3xi5">{{was.ownTotalRepair}}</td>
+            </tr>
+            <tr>
+              <td class="tg2-6e8n">Deposit</td>
+              <td class="tg2-3xi5">{{was.ownOkDeposit}}</td>
+              <td class="tg2-3xi5">{{was.ownNgDeposit}}</td>
+              <td class="tg2-3xi5">{{was.ownTotalDeposit}}</td>
+            </tr>
+            <tr>
+              <td class="tg2-zlqz" rowspan="2">Other Yard</td>
+              <td class="tg2-6e8n">New Car</td>
+              <td class="tg2-3xi5">{{was.otOkNewcar}}</td>
+              <td class="tg2-3xi5">{{was.otNgNewcar}}</td>
+              <td class="tg2-3xi5">{{was.otTotalNewcar}}</td>
+            </tr>
+            <tr>
+              <td class="tg2-6e8n">Repair</td>
+              <td class="tg2-3xi5">{{was.otOkRepair}}</td>
+              <td class="tg2-3xi5">{{was.otNgRepair}}</td>
+              <td class="tg2-3xi5">{{was.otTotalRepair}}</td>
+            </tr>
+            <tr>
+              <td class="tg2-zlqz" colspan="2">Total</td>
+              <td class="tg2-7g6k">{{was.okTotal}}</td>
+              <td class="tg2-7g6k">{{was.ngTotal}}</td>
+              <td class="tg2-7g6k">{{was.total}}</td>
+            </tr>
+          </tbody>
+          </table>
+          
+      </td></tr>
+</table>  
+</td>
+</tbody>
+</table>
+
+</body>
+</html> 

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Monitor</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy"
+      content="default-src * 'self' 'unsafe-inline' data: gap: 'unsafe-eval';
+      style-src * 'self' 'unsafe-inline';
+      connect-src * ;
+      script-src * 'self' 'unsafe-inline';
+      media-src *">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" >
+    <meta http-equiv="Pragma" content="no-cache" >
+    <meta http-equiv="Expires" content="0" >
+
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link rel="stylesheet" href="./css/style-main.css">
+    <script src="../js/main.js"></script>
+    <script src="../js/angular.min.js"></script>
+    <script src="./js/app-main.js"></script>
+
+	</head>
+ <body ng-app="myApp" ng-controller="myCtrl">
+
+    <table class="table" id="left-table">
+      <thead  style="background-color:#0071C1; ">
+        <tr>
+          <td colspan="5" class="head-top" style="background-color:#092250; color: white;">
+            <h1>{{system_name}}</h1>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="5" class="head-top" style="background-color:#1a488d; color: #ffffff; font-size: 0.6vw;">
+            <h1>{{title_cl1}}</h1>
+          </td>
+        </tr>
+        <tr>
+          <th rowspan="2" colspan="2" class="head" >AREA</th>
+          <th rowspan="2" class="g" style="width:5vw; ">LANE</th>
+          <th colspan="2" class="head2" >PRIORITY</th>
+        </tr>
+        <tr>
+          <th class="head2" style="width:4vw; " >1ST</th>
+          <th class="head2" style="width:4vw; " >2ST</th>
+        </tr>
+      </thead>
+      <tbody  style="background-color:#01B0F1; color:#0e0a30; font-weight: bold;" >
+        <tr>
+          <td  class="g" rowspan="6">Sorting Area</td>
+          <td  class="g" rowspan="2">{{sensor[1].name}}</td>
+          <td >{{sensor[1].lane}}</td>
+          <td><div ng-class="{'circle_gray':sensor[1].light1==0,'circle_green':sensor[1].light1==1}" class="circle "></div></td>
+          <td><div ng-class="{'circle_gray':sensor[1].light2==0,'circle_yellow':sensor[1].light2==1}" class="circle "></div></td>
+        </tr>
+        <tr>
+          <td>{{sensor[2].lane}}</td>
+          <td ><div ng-class="{'circle_gray':sensor[2].light1==0,'circle_green':sensor[2].light1==1}" class="circle "></div></td>
+          <td><div ng-class="{'circle_gray':sensor[2].light2==0,'circle_yellow':sensor[2].light2==1}" class="circle "></div></td>
+         </tr>     
+        <tr>
+          <td  class="g" rowspan="2">{{sensor[3].name}}</td>
+          <td>{{sensor[3].lane}}</td>
+          <td><div ng-class="{'circle_gray':sensor[3].light1==0,'circle_green':sensor[3].light1==1}" class="circle "></div></td>
+          <td><div ng-class="{'circle_gray':sensor[3].light2==0,'circle_yellow':sensor[3].light2==1}" class="circle "></div></td>
+         </tr>
+        <tr>
+          <td>{{sensor[4].lane}}</td>
+          <td ><div ng-class="{'circle_gray':sensor[4].light1==0,'circle_green':sensor[4].light1==1}" class="circle "></div></td>
+          <td><div ng-class="{'circle_gray':sensor[4].light2==0,'circle_yellow':sensor[4].light2==1}" class="circle "></div></td>
+       </tr>
+        <tr>
+          <td  class="g" rowspan="2">{{sensor[5].name}}</td>
+          <td>{{sensor[5].lane}}</td>
+          <td ><div ng-class="{'circle_gray':sensor[5].light1==0,'circle_green':sensor[5].light1==1}" class="circle "></div></td>
+          <td><div ng-class="{'circle_gray':sensor[5].light2==0,'circle_yellow':sensor[5].light2==1}" class="circle "></div></td>
+        </tr>
+        <tr>
+          <td>{{sensor[6].lane}}</td>
+          <td><div ng-class="{'circle_gray':sensor[6].light1==0,'circle_green':sensor[6].light1==1}" class="circle "></div></td>
+          <td><div ng-class="{'circle_gray':sensor[6].light2==0,'circle_yellow':sensor[6].light2==1}" class="circle "></div></td>
+       </tr>
+        <tr>
+          <td  class="g" rowspan="4" colspan="2">PIO Completed</td>
+          <td >{{sensor[7].lane}}</td>
+          <td ><div ng-class="{'circle_gray':sensor[7].light1==0,'circle_green':sensor[7].light1==1}" class="circle "></div></td>
+          <td><div ng-class="{'circle_gray':sensor[7].light2==0,'circle_yellow':sensor[7].light2==1}" class="circle "></div></td>
+         </tr>
+        <tr>
+          <td >{{sensor[8].lane}}</td>
+          <td><div ng-class="{'circle_gray':sensor[8].light1==0,'circle_green':sensor[8].light1==1}" class="circle "></div></td>
+          <td><div ng-class="{'circle_gray':sensor[8].light2==0,'circle_yellow':sensor[8].light2==1}" class="circle "></div></td>
+        </tr>
+        <tr>
+          <td >{{sensor[9].lane}}</td>
+          <td><div ng-class="{'circle_gray':sensor[9].light1==0,'circle_green':sensor[9].light1==1}" class="circle "></div></td>
+          <td><div ng-class="{'circle_gray':sensor[9].light2==0,'circle_yellow':sensor[9].light2==1}" class="circle "></div></td>
+        </tr>
+        <tr>
+          <td >{{sensor[10].lane}}</td>
+          <td><div ng-class="{'circle_gray':sensor[10].light1==0,'circle_green':sensor[10].light1==1}" class="circle "></div></td>
+          <td><div ng-class="{'circle_gray':sensor[10].light2==0,'circle_yellow':sensor[10].light2==1}" class="circle "></div></td>
+        </tr>
+        <tr>
+          <td  class="g" rowspan="13">PIO Completed</td>
+          <td  class="g" rowspan="3">Export</td>
+          <td >{{sensor[11].lane}}</td>
+          <td ><div ng-class="{'circle_gray':sensor[11].light1==0,'circle_green':sensor[11].light1==1}" class="circle "></div></td>
+          <td><div ng-class="{'circle_gray':sensor[11].light2==0,'circle_yellow':sensor[11].light2==1}" class="circle "></div></td>
+        </tr>      
+        <tr>
+          <td >{{sensor[12].lane}}</td>
+          <td ><div ng-class="{'circle_gray':sensor[12].light1==0,'circle_green':sensor[12].light1==1}" class="circle "></div></td>
+          <td><div ng-class="{'circle_gray':sensor[12].light2==0,'circle_yellow':sensor[12].light2==1}" class="circle "></div></td>
+        </tr>    
+        <tr>
+          <td >{{sensor[13].lane}}</td>
+          <td ><div ng-class="{'circle_gray':sensor[13].light1==0,'circle_green':sensor[13].light1==1}" class="circle "></div></td>
+          <td><div ng-class="{'circle_gray':sensor[13].light2==0,'circle_yellow':sensor[13].light2==1}" class="circle "></div></td>
+        </tr>   
+        <tr>
+        <td  class="g" rowspan="4">Dom Assigned</td>
+        <td >{{sensor[14].lane}}</td>
+        <td ><div ng-class="{'circle_gray':sensor[14].light1==0,'circle_green':sensor[14].light1==1}" class="circle "></div></td>
+        <td><div ng-class="{'circle_gray':sensor[14].light2==0,'circle_yellow':sensor[14].light2==1}" class="circle "></div></td>
+      </tr>      
+      <tr>
+        <td >{{sensor[15].lane}}</td>
+        <td ><div ng-class="{'circle_gray':sensor[15].light1==0,'circle_green':sensor[15].light1==1}" class="circle "></div></td>
+        <td><div ng-class="{'circle_gray':sensor[15].light2==0,'circle_yellow':sensor[15].light2==1}" class="circle "></div></td>
+      </tr>    
+      <tr>
+        <td >{{sensor[16].lane}}</td>
+        <td ><div ng-class="{'circle_gray':sensor[16].light1==0,'circle_green':sensor[16].light1==1}" class="circle "></div></td>
+        <td><div ng-class="{'circle_gray':sensor[16].light2==0,'circle_yellow':sensor[16].light2==1}" class="circle "></div></td>
+      </tr>    
+      <tr>
+        <td >{{sensor[17].lane}}</td>
+        <td ><div ng-class="{'circle_gray':sensor[17].light1==0,'circle_green':sensor[17].light1==1}" class="circle "></div></td>
+        <td><div ng-class="{'circle_gray':sensor[17].light2==0,'circle_yellow':sensor[17].light2==1}" class="circle "></div></td>
+      </tr>  
+      <tr>
+      <td  class="g" rowspan="3">Unassigned Plant 1</td>
+      <td >{{sensor[18].lane}}</td>
+      <td ><div ng-class="{'circle_gray':sensor[18].light1==0,'circle_green':sensor[18].light1==1}" class="circle "></div></td>
+      <td><div ng-class="{'circle_gray':sensor[18].light2==0,'circle_yellow':sensor[18].light2==1}" class="circle "></div></td>
+    </tr>      
+    <tr>
+      <td >{{sensor[19].lane}}</td>
+      <td ><div ng-class="{'circle_gray':sensor[19].light1==0,'circle_green':sensor[19].light1==1}" class="circle "></div></td>
+      <td><div ng-class="{'circle_gray':sensor[19].light2==0,'circle_yellow':sensor[19].light2==1}" class="circle "></div></td>
+    </tr>    
+    <tr>
+      <td >{{sensor[20].lane}}</td>
+      <td ><div ng-class="{'circle_gray':sensor[20].light1==0,'circle_green':sensor[20].light1==1}" class="circle "></div></td>
+      <td><div ng-class="{'circle_gray':sensor[20].light2==0,'circle_yellow':sensor[20].light2==1}" class="circle "></div></td>
+    </tr>     
+    <tr>
+      <td  class="g" rowspan="3">Unassigned Plant 2</td>
+      <td >{{sensor[21].lane}}</td>
+      <td ><div ng-class="{'circle_gray':sensor[21].light1==0,'circle_green':sensor[21].light1==1}" class="circle "></div></td>
+      <td><div ng-class="{'circle_gray':sensor[21].light2==0,'circle_yellow':sensor[21].light2==1}" class="circle "></div></td>
+    </tr>      
+    <tr>
+      <td >{{sensor[22].lane}}</td>
+      <td ><div ng-class="{'circle_gray':sensor[22].light1==0,'circle_green':sensor[22].light1==1}" class="circle "></div></td>
+      <td><div ng-class="{'circle_gray':sensor[22].light2==0,'circle_yellow':sensor[22].light2==1}" class="circle "></div></td>
+    </tr>    
+    <tr>
+      <td >{{sensor[23].lane}}</td>
+      <td ><div ng-class="{'circle_gray':sensor[23].light1==0,'circle_green':sensor[23].light1==1}" class="circle "></div></td>
+      <td><div ng-class="{'circle_gray':sensor[23].light2==0,'circle_yellow':sensor[23].light2==1}" class="circle "></div></td>
+    </tr>          
+      </tbody>
+      <tfoot class="foot">
+        <tr style="background-color:#0071C1;  font-weight: bold; ">
+          <th rowspan="2">Total Unit</th>
+          <th rowspan="2" style="font-size:4vw;">{{sensor[0].total}}</th>
+          <th style="font-size:0.8vw;">Std Max</th>
+          <th >{{sensor[0].max}}</th>
+          <th>
+            <div ng-class="{'circle_gray':sensor[0].maxEnable==0,'circle_danger':sensor[0].maxEnable==1}" class="circle"></div>
+          </th>
+        </tr>
+        <tr style="background-color:#0071C1;  font-weight: bold; ">
+          <th style="font-size:0.8vw;" ><span>Std. Min</span></th>
+          <th >{{sensor[0].min}}</th>
+          <th>
+            <div ng-class="{'circle_gray':sensor[0].minEnable==0,'circle_danger':sensor[0].minEnable==1}" class="circle"></div>
+          </th>
+        </tr>
+      </tfoot>
+      </table>
+
+
+</body>
+</html> 
