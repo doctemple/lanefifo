@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Monitor</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy"
+      content="default-src * 'self' 'unsafe-inline' data: gap: 'unsafe-eval';
+      style-src * 'self' 'unsafe-inline';
+      connect-src * ;
+      script-src * 'self' 'unsafe-inline';
+      media-src *">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" >
+    <meta http-equiv="Pragma" content="no-cache" >
+    <meta http-equiv="Expires" content="0" >
+
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="./css/style-lene-washing.css">
+    <script src="../js/main.js"></script>
+    <script >
+    var lane = _Get('l');
+    </script>
+    <script src="../js/angular.min.js"></script>
+    <script src="./js/app-lane-washing.js"></script>
+    <script>
+      function resizeToMinimum(){
+  var minimum    = [640, 480];
+  var current    = [window.outerWidth, window.outerHeight];
+  var restricted = [];
+  var i          = 2;
+
+  while(i-- > 0){
+    restricted[i] = minimum[i] > current[i] ? minimum[i] : current[i];
+  }
+
+  window.resizeTo(current[0], current[1]);
+}
+
+window.addEventListener('resize', resizeToMinimum, false);
+    </script>
+
+	</head>
+ <body ng-app="myApp">
+  <div id="warpper" ng-controller="myCtrl" >
+    <div id="group">
+        <h1>{{sensor.name}}</h1>
+    </div>
+    <div id="sub_ch">
+      <h1>Channel</h1>
+    </div>
+    <div id="sub_lane">
+      <h1>lane</h1>
+    </div>
+    <div id="channel">
+      <h1>
+        {{sensor.channel}}
+      </h1>
+    </div>    
+<div id="lene">
+  <h1>{{sensor.lane}}</h1>
+</div>
+<div id="status" class="flex-container">
+  <div id="circle1"  ng-class="{
+    'circle_gray':sensor.light1==0,
+    'circle_yellow':sensor.light1==1,
+    'circle_orange':sensor.light1==2,
+    'circle_red':sensor.light1==3
+  }" class="circle "></div>
+</div>
+<div id="clock">
+  <span id="minutes">{{startTime | date:'mm:ss'}}</span>
+</div>
+  </div>
+
+</body>
+</html>

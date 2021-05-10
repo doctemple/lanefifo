@@ -31,39 +31,34 @@ $scope.was = [];
           var plan = res.data['detailsPlan'];
 
           /* C/O */
-          var co = plan.co.split(',');
-          $scope.was['batchCO'] = co[0];
-          $scope.was['repairCO'] = co[1];
-          $scope.was['depositCO'] = co[2];
-          $scope.was['totalCO'] = co[3];
+          $scope.was['batchCO'] = plan.co[0].batchAssigned;
+          $scope.was['repairCO'] = plan.co[0].repair;
+          $scope.was['depositCO'] = plan.co[0].deposit;
+          $scope.was['totalCO'] = plan.co[0].total;
 
           /* TODAY */
-          var today = plan.today.split(',');
-          $scope.was['batchToday'] = today[0];
-          $scope.was['repairToday'] = today[1];
-          $scope.was['depositToday'] = today[2];
-          $scope.was['totalToday'] = today[3];
+          $scope.was['batchToday'] = plan.today[0].batchAssigned;
+          $scope.was['repairToday'] = plan.today[0].repair;
+          $scope.was['depositToday'] = plan.today[0].deposit;
+          $scope.was['totalToday'] = plan.today[0].total;
           
           /* TOTAL */
-          var total = plan.total.split(',');
-          $scope.was['batchTotal'] = total[0];
-          $scope.was['repairTotal'] = total[1];
-          $scope.was['depositTotal'] = total[2];
-          $scope.was['totalTotal'] = total[3];
+          $scope.was['batchTotal'] = plan.total[0].batchAssigned;
+          $scope.was['repairTotal'] = plan.total[0].repair;
+          $scope.was['depositTotal'] = plan.total[0].deposit;
+          $scope.was['totalTotal'] = plan.total[0].total;
 
           /* PLAN TODAY */
-          var planToday = plan.planToday.split(',');
-          $scope.was['batchPlanToday'] = planToday[0];
-          $scope.was['repairPlanToday'] = planToday[1];
-          $scope.was['depositPlanToday'] = planToday[2];
-          $scope.was['totalPlanToday'] = planToday[3];
+          $scope.was['batchPlanToday'] = plan.planToday[0].batchAssigned;
+          $scope.was['repairPlanToday'] = plan.planToday[0].repair;
+          $scope.was['depositPlanToday'] = plan.planToday[0].deposit;
+          $scope.was['totalPlanToday'] = plan.planToday[0].total;
 
           /* REMAIN */
-          var remain = plan.remain.split(',');
-          $scope.was['batchRemain'] = remain[0];
-          $scope.was['repairRemain'] = remain[1];
-          $scope.was['depositRemain'] = remain[2];
-          $scope.was['totalRemain'] = remain[3];
+          $scope.was['batchRemain'] = plan.remain[0].batchAssigned;
+          $scope.was['repairRemain'] = plan.remain[0].repair;
+          $scope.was['depositRemain'] = plan.remain[0].deposit;
+          $scope.was['totalRemain'] = plan.remain[0].total;
 
 
           /*////  DETAIL RESULT TABLE /////*/

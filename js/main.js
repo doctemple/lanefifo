@@ -26,8 +26,7 @@ var apiserver =ip;
 var api_fifo_sr =apiserver+':91';
 
 // BP
-var api_fifo_bp =apiserver+':92'; // Not API
-
+var api_fifo_bp =apiserver+':92'; 
 var api_was_bp =apiserver+':94';
 
 // GW
