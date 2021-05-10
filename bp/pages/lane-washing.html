@@ -1,0 +1,24 @@
+
+<link rel="stylesheet" href="./css/style-was-lene.css">
+
+  <div id="warpper" >
+    <div id="group">
+        <h1>{{sensor.name}}</h1>
+    </div>
+
+
+<div id="lene">
+  <h1>LANE {{sensor.lane}}</h1>
+</div>
+<div id="status" class="flex-container">
+  <div id="circle1"  ng-class="{
+    'circle_gray':sensor.light1==0,
+    'circle_yellow':sensor.light1==1,
+    'circle_orange':sensor.light1==2,
+    'circle_red':sensor.light1==3
+  }" class="circle "></div>
+</div>
+<div id="clock">
+  <span id="minutes">{{startTime | date:'mm:ss'}}</span>
+</div>
+  </div>
